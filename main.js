@@ -50,7 +50,7 @@ function ustvariBolnike() {
 	kreirajEHRzaBolnika(2, "Sašo", "Novak", "1995-10-20" );
 
 	if(ehrIDs.length != 3){
-		console.log("Vsi trije bolniki niso bili ustvarjeni. ustvarjenih je bilo : "+ehrIDs.length+". Prosimo, poskusite znova.");
+		console.log("Vsi trije bolniki niso bili ustvarjeni. ustvarjenih je bilo : "+ehrIDs.length+". Prosimo, poskusite znova. Nevem zakaj, ampak prvič jih ne ustvari.");
 	
 	}else{
 		bolnikiUspesni=1;
@@ -149,4 +149,5 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 
 $(document).ready(function() {
 		$("#bolnikiSporocilo").html("");
+		$("#button1")
 });
