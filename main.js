@@ -76,6 +76,7 @@ function ustvariBolnike() {
 	}
 	//nevem zakaj ampak prvič ne ustvari nobenega
 	if(bolnikiUspesni==1){
+		
 		//ustvari podatke za boruta, recimo da postane anoreksičen
 		// tole bo izrisal en graf pa neki
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2000-11-20T12:00Z", 167, 60, 36, 120, 70, "James Bond");
