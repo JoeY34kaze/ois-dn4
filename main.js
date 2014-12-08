@@ -151,10 +151,11 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 function getEhr(x){
 	if(ehrIDs.length>x){
 	var	sessionId=getSessionId();
-		$ajax({
+	$.ajaxSetup({ headers: {"Ehr-Session": sessionId}});
+		$.ajax({
 			url:baseUrl+"/demographics/ehr/"+ehrIDs[x]+"/party",
-			headers: {"Ehr-Session": sessionId},
-				success: function(p){
+			
+		success: function(p){
 					var party=p.party;
 					console.log("Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames);
 				}
