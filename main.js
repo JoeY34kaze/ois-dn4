@@ -137,29 +137,39 @@ function ustvariBolnike() {
 function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak, diastolicniKrvniTlak, merilec) {
 	var sessionId = getSessionId();
 	var bmi=teza/((visina*visina)/10000);
-		$.ajaxSetup({ headers: {"Ehr-Session": sessionId}});
-		var meritev = {
-			"ctx/language": "en",
-		    "ctx/territory": "SI",
-		    "ctx/time": datumUra,
-		    "vital_signs/height_length/any_event/body_height_length": visina,
-		    "vital_signs/body_weight/any_event/body_weight": teza,
-		    "vital_signs/blood_pressure/any_event/systolic": sistolicniKrvniTlak,
-		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak
-		};
-		var par = {"ehrId": ehrid, templateId: 'Vital Signs', format: 'FLAT', committer: merilec};
-		$.ajax({
-		    url: baseUrl + "/composition?" + $.param(par),
-		    type: 'POST',
-		    contentType: 'application/json',
-		    data: JSON.stringify(meritev),
-		    success: function (res) {
-		    	console.log(res.meta.href);
-		    },
-		    error: function(err) {
-				console.log(JSON.parse(err.responseText).userMessage);
-		    }
-		});
+	$.ajaxSetup({
+	 headers: {
+        "Ehr-Session": sessionId
+    	}
+	});
+	
+	var compositionData = {
+    "ctx/time": datumUra,
+    "ctx/language": "en",
+    "ctx/territory": "SI",
+    "vital_signs/body_temperature/any_event/temperature|magnitude": 37.1,
+    "vital_signs/body_temperature/any_event/temperature|unit": "°C",
+    "vital_signs/blood_pressure/any_event/systolic": 120,
+    "vital_signs/blood_pressure/any_event/diastolic": 90,
+    "vital_signs/height_length/any_event/body_height_length": 171,
+    "vital_signs/body_weight/any_event/body_weight": 57.2
+};
+var queryParams = {
+    "ehrId": ehrid,
+    templateId: 'Vital Signs',
+    format: 'FLAT',
+    committer: 'James'
+};
+$.ajax({
+    url: baseUrl + "/composition?" + $.param(queryParams),
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(compositionData),
+    success: function (res) {
+        $("#header").html("Store composition");
+        $("#result").html(res.meta.href);
+    }
+});
 	
 }
 
