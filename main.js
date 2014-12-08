@@ -199,7 +199,8 @@ function getEhr(x){
         	for (var i in res) {
             	console.log(res[i].time + ': ' + res[i].systolic + '/' + res[i].diastolic + res[i].unit);
         	}
-    	}
+    	},
+    	error: function(err){console.log("Napaka: "+JSON.parse(err.responseText).userMessage);}
 	});
 	
 	
