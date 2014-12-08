@@ -48,7 +48,10 @@ function kreirajEHRzaBolnika(x, ime, priimek, datum) {
 }
 function changeBtnText(id, text){
 	var b=document.getElementById(id);
-	b.innerHTML = b.value = text;
+	b.innerHTML =text;
+	if(b.value!==null){
+		b.value=text;
+	}
 }
 
 function ustvariBolnike() {
