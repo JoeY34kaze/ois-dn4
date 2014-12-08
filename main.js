@@ -46,6 +46,10 @@ function kreirajEHRzaBolnika(x, ime, priimek, datum) {
 		    }
 		});
 }
+function changeBtnText(id, text){
+	var b=document.getElementById(id);
+	b.innerHTML = b.value = text;
+}
 
 function ustvariBolnike() {
 	var bolnikiUspesni=0;
@@ -60,6 +64,10 @@ function ustvariBolnike() {
 		bolnikiUspesni=1;
 		console.log("Ustvarjeni: "+ehrIDs[0]+"\t"+ehrIDs[1]+"\t"+ehrIDs[2]);
 		document.getElementById('button1').style.visibility = 'hidden';
+		
+		changeBtnText("item0",bolniki[0]);
+		changeBtnText("item1",bolniki[1]);
+		changeBtnText("item2",bolniki[2]);
 
 	//	$("#kreirajSporociloLoop").html("<span class='obvestilo label label-success fade-in'>Uspešno kreirani EHR-ji:  '"+ehrIDs[0]+"\t"+ehrIDs[1]+"\t"+ehrIDs[2]  + "'.</span>");
 	}
@@ -119,6 +127,7 @@ function ustvariBolnike() {
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2013-11-20T12:00Z", 178, 86, 120, 86, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 119, 84, "James Bond");
 	}
+	
 }
 
 function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak, diastolicniKrvniTlak, merilec) {
