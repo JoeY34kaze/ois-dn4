@@ -166,8 +166,7 @@ $.ajax({
     contentType: 'application/json',
     data: JSON.stringify(compositionData),
     success: function (res) {
-        $("#header").html("Store composition");
-        $("#result").html(res.meta.href);
+        console.log(res.meta.href);
     }
 });
 	
