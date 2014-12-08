@@ -4,6 +4,7 @@ var queryUrl = baseUrl + '/query';
 var username = "ois.seminar";
 var password = "ois4fri";
 var ehrIDs=[]
+var bolniki=[]
 function getSessionId() {
     var response = $.ajax({
         type: "POST",
@@ -33,7 +34,10 @@ function kreirajEHRzaBolnika(x, ime, priimek, datum) {
 		            contentType: 'application/json',
 		            data: JSON.stringify(Pdata),
 		            success: function (party) {
-		                if (party.action == 'CREATE') {	ehrIDs[x]=ehrId;}
+		                if (party.action == 'CREATE') {	
+		                	ehrIDs[x]=ehrId;
+		                	bolniki[x]=""+ime+" "+priimek;
+		                }
 		            },
 		            error: function(err) {
 		            	console.log(JSON.parse(err.responseText).userMessage);
@@ -144,8 +148,23 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 	
 }
 
+function getEhr(x){
+	if(ehrIDs.length>x){
+	var	sessionId=getSessionId();
+		$ajax({
+			url:baseUrl+"/demographics/ehr/"+ehrIDs[x]+"/party",
+			headers: {"Ehr-Session": sessionId},
+				success: function(p){
+					var party=p.party;
+					console.log("Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames);
+				}
+		});
+	}
+}
+
 
 $(document).ready(function() {
 		$("#bolnikiSporocilo").html("");
-		$("#button1")
+		$("#button1");
+		$("buttonGetEhr");
 });
