@@ -126,9 +126,7 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 		    "vital_signs/height_length/any_event/body_height_length": visina,
 		    "vital_signs/body_weight/any_event/body_weight": teza,
 		    "vital_signs/blood_pressure/any_event/systolic": sistolicniKrvniTlak,
-		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak,
-		    "vital_signs/body_mass_index/any_event/body_mass_index|magnitude":bmi,
-		    "vital_signs/body_mass_index/any_event/body_mass_index|unit":"kg/m2"
+		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak
 		};
 		var par = {"ehrId": ehrid, templateId: 'Vital Signs', format: 'FLAT', committer: merilec};
 		$.ajax({
