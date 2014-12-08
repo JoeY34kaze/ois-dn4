@@ -166,7 +166,7 @@ $.ajax({
     contentType: 'application/json',
     data: JSON.stringify(compositionData),
     success: function (res) {
-        console.log(res.meta.href);
+        console.log(res);
     }
 });
 	
@@ -185,6 +185,25 @@ function getEhr(x){
 				}
 		});
 	}
+	
+	
+	$.ajaxSetup({
+	 headers: {
+        "Ehr-Session": sessionId
+    	}
+	});
+	$.ajax({
+		 url: baseUrl + "/view/" + ehrIDs[x] + "/blood_pressure",
+    	type: 'GET',
+    	success: function (res) {
+        	for (var i in res) {
+            	console.log(res[i].time + ': ' + res[i].systolic + '/' + res[i].diastolic + res[i].unit);
+        	}
+    	}
+	});
+	
+	
+	
 }
 
 function inicializacija(){
