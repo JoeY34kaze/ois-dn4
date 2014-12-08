@@ -182,12 +182,24 @@ function getEhr(x){
 		success: function(p){
 					var party=p.party;
 					console.log("Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames);
+					getMeritev(x);
 				}
 		});
 	}
+
+	
+
 	
 	
-	$.ajaxSetup({
+	
+}
+
+function getMeritev(x){
+	
+	
+		var	sessionId=getSessionId();
+
+		$.ajaxSetup({
 	 headers: {
         "Ehr-Session": sessionId
     	}
@@ -202,9 +214,6 @@ function getEhr(x){
     	},
     	error: function(err){console.log("Napaka: "+JSON.parse(err.responseText).userMessage);}
 	});
-	
-	
-	
 }
 
 function inicializacija(){
