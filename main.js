@@ -59,7 +59,8 @@ function ustvariBolnike() {
 	}else{
 		bolnikiUspesni=1;
 		console.log("Ustvarjeni: "+ehrIDs[0]+"\t"+ehrIDs[1]+"\t"+ehrIDs[2]);
-			$('#navi').children().prop('disabled',false);
+		document.getElementById('button1').style.visibility = 'hidden';
+
 	//	$("#kreirajSporociloLoop").html("<span class='obvestilo label label-success fade-in'>Uspešno kreirani EHR-ji:  '"+ehrIDs[0]+"\t"+ehrIDs[1]+"\t"+ehrIDs[2]  + "'.</span>");
 	}
 	//nevem zakaj ampak prvič ne ustvari nobenega
@@ -165,8 +166,7 @@ function getEhr(x){
 }
 
 function inicializacija(){
-	//z jquery disable dropdown 
-	$('#navi').children().prop('disabled',true);
+	//z jquery disable dropdown
 	ustvariBolnike();
 }
 
