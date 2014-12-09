@@ -129,12 +129,72 @@ function ustvariBolnike() {
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2011-11-20T12:00Z", 177, 81, 130, 92, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2012-11-20T12:00Z", 178, 85, 135, 95, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2013-11-20T12:00Z", 178, 86, 120, 86, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 119, 84, "James Bond");
+		dodajMeritveVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 119, 84, "James Bond");
 	}
 	
 }
 
-function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak, diastolicniKrvniTlak, merilec) {
+function dodajMeritveVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak1, diastolicniKrvniTlak1, merilec1) {
+	sessionId = getSessionId();
+	console.log("a1 : dodajanje meritve");
+
+	var ehrId =ehrid;
+	var datumInUra = datumUra;
+	var telesnaVisina = visina;
+	var telesnaTeza = teza;
+	var telesnaTemperatura = 36;
+	var sistolicniKrvniTlak = sistolicniKrvniTlak1;
+	var diastolicniKrvniTlak = diastolicniKrvniTlak1;
+	var nasicenostKrviSKisikom = 0;
+	var merilec = "a";
+
+	if (!ehrId || ehrId.trim().length == 0) {
+	console.log("\ta1");
+	} else {
+		$.ajaxSetup({
+		    headers: {"Ehr-Session": sessionId}
+		});
+		var podatki = {
+			// Preview Structure: https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
+		    "ctx/language": "en",
+		    "ctx/territory": "SI",
+		    "ctx/time": datumInUra,
+		    "vital_signs/height_length/any_event/body_height_length": telesnaVisina,
+		    "vital_signs/body_weight/any_event/body_weight": telesnaTeza,
+		   	"vital_signs/body_temperature/any_event/temperature|magnitude": telesnaTemperatura,
+		    "vital_signs/body_temperature/any_event/temperature|unit": "°C",
+		    "vital_signs/blood_pressure/any_event/systolic": sistolicniKrvniTlak,
+		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak,
+		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
+		};
+		var parametriZahteve = {
+		    "ehrId": ehrId,
+		    templateId: 'Vital Signs',
+		    format: 'FLAT',
+		    committer: merilec
+		};
+		$.ajax({
+		    url: baseUrl + "/composition?" + $.param(parametriZahteve),
+		    type: 'POST',
+		    contentType: 'application/json',
+		    data: JSON.stringify(podatki),
+		    success: function (res) {
+		    	console.log(res.meta.href);
+	console.log("\ta2");		    },
+		    error: function(err) {
+	console.log("\ta3 err");	
+	console.log(JSON.parse(err.responseText).userMessage);
+		    }
+		});
+	}
+}
+
+
+
+
+
+
+function dodajMeritevVitalnihZnakov2(ehrid, datumUra, visina, teza, sistolicniKrvniTlak, diastolicniKrvniTlak, merilec) {
 	var sessionId = getSessionId();
 	var bmi=teza/((visina*visina)/10000);
 	$.ajaxSetup({
@@ -248,6 +308,7 @@ function preberiMeritveVitalnihZnakov(x) {
 					    success: function (res) {
 					    			console.log("3");
 					    	if (res.length > 0) {
+					    		// res je 0
 					    				console.log("4");
 						        for (var i in res) {
 						        			console.log("5");
