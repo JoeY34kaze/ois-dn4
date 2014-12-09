@@ -167,6 +167,8 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak,
 		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
 		};
+		
+		console.log("Podatki za poslat:  "+podatki);
 		var parametriZahteve = {
 		    "ehrId": ehrId,
 		    templateId: 'Vital Signs',
