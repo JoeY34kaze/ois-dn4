@@ -166,7 +166,7 @@ $.ajax({
     contentType: 'application/json',
     data: JSON.stringify(compositionData),
     success: function (res) {
-        console.log(res);
+        console.log(res.meta.href);
     }
 });
 	
@@ -183,7 +183,7 @@ function getEhr(x){
 					var party=p.party;
 					var te="Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames;
 					document.getElementById("test").innerHTML = te;
-					console.log(te);
+					console.log(te+"<br>"+"<b>Meritve:</b>");
 					getMeritev(x);
 				}
 		});
