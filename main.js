@@ -248,7 +248,7 @@ function preberiMeritveVitalnihZnakov(x) {
 						        	
 						        	
 						           // results += "<tr><td>" + res[i].time + "</td><td class='text-right'>" + res[i].weight + " " 	+ res[i].unit + "</td>";
-						            console.log("\n "res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
+						            $("#test").append("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 						        }
 						      //  results += "</table>";
 						     
