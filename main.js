@@ -224,6 +224,7 @@ function getMeritev(x){
 
 
 function preberiMeritveVitalnihZnakov(x) {
+	console.log("branje meritev")
 	sessionId = getSessionId();	
 
 	var ehrId = ehrIDs[x];
