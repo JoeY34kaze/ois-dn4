@@ -181,7 +181,9 @@ function getEhr(x){
 			
 		success: function(p){
 					var party=p.party;
-					console.log("Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames);
+					vat te="Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames;
+					document.getElementById("test").innerHTML = te;
+					console.log(te);
 					getMeritev(x);
 				}
 		});
@@ -204,7 +206,10 @@ function getMeritev(x){
     	type: 'GET',
     	success: function (res) {
         	for (var i in res) {
-            	console.log(res[i].time + ': ' + res[i].systolic + '/' + res[i].diastolic + res[i].unit);
+        		var lololo=res[i].time + ': ' + res[i].systolic + '/' + res[i].diastolic + res[i].unit;
+            	console.log(lololo);
+            	var m= document.getElementById('test').innerHTML;
+            	document.getElementById("test").innerHTML = te+<br>+lololo;
         	}
     	},
     	error: function(err){console.log("Napaka: "+JSON.parse(err.responseText).userMessage);}
