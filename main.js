@@ -186,11 +186,6 @@ function getEhr(x){
 				}
 		});
 	}
-
-	
-
-	
-	
 	//end//
 }
 

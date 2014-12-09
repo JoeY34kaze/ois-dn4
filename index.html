@@ -11,9 +11,10 @@
 	    <style>
 	  		body {
 	  			padding: 10px;
-	  			padding-top: 70px;
+	  			padding-top: 80px;
 	  		}
 	  	</style>
+	  	<link rel="stylesheet" href="style.css">
 	</head>
 	<body onload="inicializacija()">
 	<!--	<div class="page-header"><h2>Prikaz EHR - BMI</h2></div> -->
@@ -50,8 +51,8 @@
 					</div>
 			</div>
 		</nav>
-		
-		<button id="buttonGetEhr" type="button" class="btn btn-primary btn-xs" onclick="getEhr(0)">Prikaži Ehr bolnika </button>
-		
+		<div id="buttonPrikazi">
+			<button id="buttonGetEhr" type="button" class="btn btn-primary btn-xs" onclick="getEhr(0)">Prikaži Ehr bolnika </button>
+		</div>
 	</body>
 </html>
