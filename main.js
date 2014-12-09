@@ -129,12 +129,12 @@ function ustvariBolnike() {
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2011-11-20T12:00Z", 177, 81, 130, 92, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2012-11-20T12:00Z", 178, 85, 135, 95, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[2], "2013-11-20T12:00Z", 178, 86, 120, 86, "James Bond");
-		dodajMeritveVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 119, 84, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 119, 84, "James Bond");
 	}
 	
 }
 
-function dodajMeritveVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak1, diastolicniKrvniTlak1, merilec1) {
+function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak1, diastolicniKrvniTlak1, merilec1) {
 	sessionId = getSessionId();
 	console.log("a1 : dodajanje meritve");
 
