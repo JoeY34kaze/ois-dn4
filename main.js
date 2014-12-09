@@ -232,11 +232,13 @@ function preberiMeritveVitalnihZnakov(x) {
 
 	if (!ehrId || ehrId.trim().length == 0 || !tip || tip.trim().length == 0) {
 	} else {
+		console.log("1");
 		$.ajax({
 			url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
 	    	type: 'GET',
 	    	headers: {"Ehr-Session": sessionId},
 	    	success: function (data) {
+	    				console.log("2");
 				var party = data.party;
 				if (tip == "telesna teža") {
 					$.ajax({
@@ -244,16 +246,20 @@ function preberiMeritveVitalnihZnakov(x) {
 					    type: 'GET',
 					    headers: {"Ehr-Session": sessionId},
 					    success: function (res) {
+					    			console.log("3");
 					    	if (res.length > 0) {
+					    				console.log("4");
 						        for (var i in res) {
-						        	
+						        			console.log("5");
 						        	
 						           // results += "<tr><td>" + res[i].time + "</td><td class='text-right'>" + res[i].weight + " " 	+ res[i].unit + "</td>";
 						            $("#test").append("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
+						            		console.log("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 						        }
 						      //  results += "</table>";
 						     
 					    	} else {
+					    				console.log("6");
 					    	}
 					    },
 					    error: function() {
