@@ -192,10 +192,7 @@ function getEhr(x){
 }
 
 function getMeritev(x){
-	
-	
 		var	sessionId=getSessionId();
-
 		$.ajaxSetup({
 	 headers: {
         "Ehr-Session": sessionId
@@ -233,7 +230,6 @@ function preberiMeritveVitalnihZnakov(x) {
 	var tip = "telesna teža";
 
 	if (!ehrId || ehrId.trim().length == 0 || !tip || tip.trim().length == 0) {
-		//$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-warning fade-in'>Prosim vnesite zahtevan podatek!");
 	} else {
 		$.ajax({
 			url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
@@ -241,7 +237,6 @@ function preberiMeritveVitalnihZnakov(x) {
 	    	headers: {"Ehr-Session": sessionId},
 	    	success: function (data) {
 				var party = data.party;
-				//$("#rezultatMeritveVitalnihZnakov").html("<br/><span>Pridobivanje podatkov za <b>'" + tip + "'</b> bolnika <b>'" + party.firstNames + " " + party.lastNames + "'</b>.</span><br/><br/>");
 				if (tip == "telesna teža") {
 					$.ajax({
 					    url: baseUrl + "/view/" + ehrId + "/" + "weight",
@@ -256,20 +251,17 @@ function preberiMeritveVitalnihZnakov(x) {
 						            $("#test").append("<br> "res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 						        }
 						      //  results += "</table>";
-						       // $("#rezultatMeritveVitalnihZnakov").append(results);
+						     
 					    	} else {
-					    	//	$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-warning fade-in'>Ni podatkov!</span>");
 					    	}
 					    },
 					    error: function() {
-					    //	$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 							console.log(JSON.parse(err.responseText).userMessage);
 					    }
 					});					
 				}
 	    	},
 	    	error: function(err) {
-	    	//	$("#preberiMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 				console.log(JSON.parse(err.responseText).userMessage);
 	    	}
 		});
