@@ -181,7 +181,7 @@ function getEhr(x){
 			
 		success: function(p){
 					var party=p.party;
-					vat te="Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames;
+					var te="Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames;
 					document.getElementById("test").innerHTML = te;
 					console.log(te);
 					getMeritev(x);
