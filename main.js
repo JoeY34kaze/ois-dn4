@@ -191,7 +191,7 @@ function getEhr(x){
 
 	
 	
-	
+	//end//
 }
 
 function getMeritev(x){
