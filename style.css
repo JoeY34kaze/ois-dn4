@@ -2,10 +2,16 @@
     padding-top: 20px;
     padding-left: 5%;
 }
+#superWrapper{
+    width:90%;
+    height:900px;
+    margin: 0 auto;
+    
+}
 #wrapper{
     padding-top: 80px;
     background-color:#d3d3d3;
-    height:4000px;
+    height:100%;
     width:100%;
 }
 #wrapper2{
@@ -21,7 +27,24 @@
     background-color:#d3d8f5;
 }
 #container{
-    height:100%-80px;
+    height:100%;
     width:100%;
     background-color:#d3dcf5;
+}
+
+#grafi{
+    background-color:#df2cf5;
+    float:left;
+    height:100%;
+    width:75%;
+}
+#spacer1{
+    float:left;
+    height:100%;
+    width:3%;
+}
+#twitter{
+    float:left;
+    height:100%;
+    width:15%;
 }

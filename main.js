@@ -5,8 +5,11 @@ var username = "ois.seminar";
 var password = "ois4fri";
 var ehrIDs=[]
 var bolniki=[]
-var bolnikData1=[]
-var bolnikData2=[]
+var bolnikData1=[];
+var bolnikData2=     
+
+
+[]
 var bolnikData3=[]
 var bolnikData4=[]
 
