@@ -75,12 +75,17 @@ function ustvariBolnike() {
 	//	$("#kreirajSporociloLoop").html("<span class='obvestilo label label-success fade-in'>Uspešno kreirani EHR-ji:  '"+ehrIDs[0]+"\t"+ehrIDs[1]+"\t"+ehrIDs[2]  + "'.</span>");
 	}
 	//nevem zakaj ampak prvič ne ustvari nobenega
-	if(bolnikiUspesni==1){
-		
-		//ustvari podatke za boruta, recimo da postane anoreksičen
-		// tole bo izrisal en graf pa neki
-		dodajMeritevVitalnihZnakov(ehrIDs[0], "2000-11-20T12:00Z", 167, 60, 36, 120, 70, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[0], "2001-11-20T12:00Z", 168, 64, 36, 120, 70, "James Bond");
+
+	
+}
+
+
+function blabla(){
+	//blabla dela pravilno
+	console.log("smov blabla");
+	if(ehrIDs.length>2){
+		dodajMeritevVitalnihZnakov( ehrIDs[0], "2000-11-20T12:00Z", 167, 60, 36, 120, 70, "James Bond");
+		dodajMeritevVitalnihZnakov( ehrIDs[0], "2001-11-20T12:00Z", 168, 64, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2002-11-20T12:00Z", 169, 66, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2003-11-20T12:00Z", 171, 72, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2004-11-20T12:00Z", 172, 72, 36, 120, 70, "James Bond");
@@ -115,25 +120,83 @@ function ustvariBolnike() {
 
 		//ustvari podatke za sašota, pri sašotu ni ekstremov
 		
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2000-11-20T12:00Z", 167, 60, 120, 70, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2001-11-20T12:00Z", 168, 64, 120, 70, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2002-11-20T12:00Z", 169, 66, 120, 70, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2003-11-20T12:00Z", 171, 72, 120, 70, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2004-11-20T12:00Z", 172, 72, 125, 75, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2005-11-20T12:00Z", 173, 75, 123, 83, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2006-11-20T12:00Z", 173, 75, 126, 86, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2007-11-20T12:00Z", 174, 78, 127, 90, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2008-11-20T12:00Z", 174, 83, 125, 90, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2009-11-20T12:00Z", 175, 78, 124, 90, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2010-11-20T12:00Z", 176, 78, 125, 91, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2011-11-20T12:00Z", 177, 81, 130, 92, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2012-11-20T12:00Z", 178, 85, 135, 95, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2013-11-20T12:00Z", 178, 86, 120, 86, "James Bond");
-		dodajMeritevVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 119, 84, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2000-11-20T12:00Z", 167, 60, 36, 120, 70, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2001-11-20T12:00Z", 168, 64, 36, 120, 70, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2002-11-20T12:00Z", 169, 66, 36, 120, 70, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2003-11-20T12:00Z", 171, 72, 36, 120, 70, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2004-11-20T12:00Z", 172, 72, 36, 125, 75, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2005-11-20T12:00Z", 173, 75, 36, 123, 83, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2006-11-20T12:00Z", 173, 75, 36, 126, 86, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2007-11-20T12:00Z", 174, 78, 36, 127, 90, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2008-11-20T12:00Z", 174, 83, 36, 125, 90, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2009-11-20T12:00Z", 175, 78, 36, 124, 90, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2010-11-20T12:00Z", 176, 78, 36, 125, 91, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2011-11-20T12:00Z", 177, 81, 36, 130, 92, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2012-11-20T12:00Z", 178, 85, 36, 135, 95, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2013-11-20T12:00Z", 178, 86, 36, 120, 86, "James Bond");
+		dodajMeritevVitalnihZnakov(ehrIDs[2], "2014-11-20T12:00Z", 179, 84, 36, 119, 84, "James Bond");
+	}else{
+		console.log("Napaka! Ustvarjen ni še noben bolnik! ")
 	}
-	
+		
+		
 }
 
+function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, tempe, sistolicniKrvniTlak1, diastolicniKrvniTlak1, merilec1) {
+	console.log("dodajam meritev");
+	sessionId = getSessionId();
+	var ehrId = ehrid;
+	var datumInUra = datumUra;
+	var telesnaVisina = visina;
+	var telesnaTeza = teza;
+	var telesnaTemperatura = tempe;
+	var sistolicniKrvniTlak = sistolicniKrvniTlak1;
+	var diastolicniKrvniTlak = diastolicniKrvniTlak1;
+	var nasicenostKrviSKisikom = 0;
+	var merilec = merilec1;
+
+	if (!ehrId || ehrId.trim().length == 0) {
+	} else {
+		$.ajaxSetup({
+		    headers: {"Ehr-Session": sessionId}
+		});
+		var podatki = {
+			// Preview Structure: https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
+		    "ctx/language": "en",
+		    "ctx/territory": "SI",
+		    "ctx/time": datumInUra,
+		    "vital_signs/height_length/any_event/body_height_length": telesnaVisina,
+		    "vital_signs/body_weight/any_event/body_weight": telesnaTeza,
+		    "vital_signs/blood_pressure/any_event/systolic": sistolicniKrvniTlak,
+		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak,
+		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
+		};
+		var parametriZahteve = {
+		    "ehrId": ehrId,
+		    templateId: 'Vital Signs',
+		    format: 'FLAT',
+		    committer: merilec
+		};
+		$.ajax({
+		    url: baseUrl + "/composition?" + $.param(parametriZahteve),
+		    type: 'POST',
+		    contentType: 'application/json',
+		    data: JSON.stringify(podatki),
+		    success: function (res) {
+		    	console.log(res.meta.href);
+		    },
+		    error: function(err) {
+				console.log(JSON.parse(err.responseText).userMessage);
+		    }
+		});
+	}
+}
+
+
+
+
+
+/*
 function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak1, diastolicniKrvniTlak1, merilec1) {
 	sessionId = getSessionId();
 	console.log("a1 : dodajanje meritve");
@@ -168,7 +231,7 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
 		};
 		
-		console.log("Podatki za poslat:  "+podatki);
+		console.log("Podatki za poslat:  "+podatki)
 		var parametriZahteve = {
 		    "ehrId": ehrId,
 		    templateId: 'Vital Signs',
@@ -191,10 +254,10 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrv
 	}
 }
 
+*/
 
 
-
-
+/*
 
 function dodajMeritevVitalnihZnakov2(ehrid, datumUra, visina, teza, sistolicniKrvniTlak, diastolicniKrvniTlak, merilec) {
 	var sessionId = getSessionId();
@@ -234,6 +297,8 @@ $.ajax({
 	
 }
 
+*/
+
 function getEhr(x){
 	if(ehrIDs.length>x){
 	var	sessionId=getSessionId();
@@ -252,7 +317,7 @@ function getEhr(x){
 	}
 	//end//
 }
-
+/*
 function getMeritev(x){
 		var	sessionId=getSessionId();
 		$.ajaxSetup({
@@ -275,7 +340,7 @@ function getMeritev(x){
 	});
 }
 
-
+*/
 
 
 
@@ -286,6 +351,10 @@ function getMeritev(x){
 
 
 function preberiMeritveVitalnihZnakov(x) {
+	
+	
+	//branje teze zagotovo deluje¨!
+	
 	console.log("branje meritev")
 	sessionId = getSessionId();	
 
@@ -370,6 +439,7 @@ function inicializacija(){
 
 $(document).ready(function() {
 		$("#bolnikiSporocilo").html("");
+		$("#button2");
 		$("#button1");
 		$("#buttonGetEhr");
 		$("#navi");
