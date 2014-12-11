@@ -37,16 +37,17 @@
     background-color:#df2cf5;
     float:left;
     height:100%;
-    width:75%;
+    width:80%;
 }
 #spacer1{
     float:left;
     height:100%;
-    width:3%;
+    width:5%;
+    background-color:#2fff22;
 }
 #twitter{
     float:left;
     height:100%;
     width:15%;
-    background-color:222222;
+    background-color:#222222;
 }
