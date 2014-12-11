@@ -5,13 +5,11 @@ var username = "ois.seminar";
 var password = "ois4fri";
 var ehrIDs=[]
 var bolniki=[]
-var bolnikData1=[];
-var bolnikData2=     
-
-
-[]
+var bolnikData1=[]
+var bolnikData2=[]
 var bolnikData3=[]
 var bolnikData4=[]
+var teee=0;
 
 function getSessionId() {
     var response = $.ajax({
@@ -69,7 +67,7 @@ function ustvariBolnike() {
 	kreirajEHRzaBolnika(2, "Sašo", "Novak", "1995-10-20" );
 
 	if(ehrIDs.length != 3){
-		console.log("Vsi trije bolniki niso bili ustvarjeni. ustvarjenih je bilo : "+ehrIDs.length+". Prosimo, poskusite znova. Nevem zakaj, ampak prvič jih ne ustvari.");
+		if(teee>0){console.log("Vsi trije bolniki niso bili ustvarjeni. ustvarjenih je bilo : "+ehrIDs.length+". Prosimo, poskusite znova.");}
 	
 	}else{
 		bolnikiUspesni=1;
@@ -203,110 +201,6 @@ function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, tempe, sistol
 
 
 
-
-/*
-function dodajMeritevVitalnihZnakov(ehrid, datumUra, visina, teza, sistolicniKrvniTlak1, diastolicniKrvniTlak1, merilec1) {
-	sessionId = getSessionId();
-	console.log("a1 : dodajanje meritve");
-
-	var ehrId =ehrid;
-	var datumInUra = datumUra;
-	var telesnaVisina = visina;
-	var telesnaTeza = teza;
-	var telesnaTemperatura = 36;
-	var sistolicniKrvniTlak = sistolicniKrvniTlak1;
-	var diastolicniKrvniTlak = diastolicniKrvniTlak1;
-	var nasicenostKrviSKisikom = 0;
-	var merilec = "a";
-
-	if (!ehrId || ehrId.trim().length == 0) {
-	console.log("\ta1");
-	} else {
-		$.ajaxSetup({
-		    headers: {"Ehr-Session": sessionId}
-		});
-		var podatki = {
-			// Preview Structure: https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
-		    "ctx/language": "en",
-		    "ctx/territory": "SI",
-		    "ctx/time": datumInUra,
-		    "vital_signs/height_length/any_event/body_height_length": telesnaVisina,
-		    "vital_signs/body_weight/any_event/body_weight": telesnaTeza,
-		   	"vital_signs/body_temperature/any_event/temperature|magnitude": telesnaTemperatura,
-		    "vital_signs/body_temperature/any_event/temperature|unit": "°C",
-		    "vital_signs/blood_pressure/any_event/systolic": sistolicniKrvniTlak,
-		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak,
-		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
-		};
-		
-		console.log("Podatki za poslat:  "+podatki)
-		var parametriZahteve = {
-		    "ehrId": ehrId,
-		    templateId: 'Vital Signs',
-		    format: 'FLAT',
-		    committer: merilec
-		};
-		$.ajax({
-		    url: baseUrl + "/composition?" + $.param(parametriZahteve),
-		    type: 'POST',
-		    contentType: 'application/json',
-		    data: JSON.stringify(podatki),
-		    success: function (res) {
-		    	console.log(res.meta.href);
-	console.log("\ta2");		    },
-		    error: function(err) {
-	console.log("\ta3 err");	
-	console.log(JSON.parse(err.responseText).userMessage);
-		    }
-		});
-	}
-}
-
-*/
-
-
-/*
-
-function dodajMeritevVitalnihZnakov2(ehrid, datumUra, visina, teza, sistolicniKrvniTlak, diastolicniKrvniTlak, merilec) {
-	var sessionId = getSessionId();
-	var bmi=teza/((visina*visina)/10000);
-	$.ajaxSetup({
-	 headers: {
-        "Ehr-Session": sessionId
-    	}
-	});
-	
-	var compositionData = {
-    "ctx/time": datumUra,
-    "ctx/language": "en",
-    "ctx/territory": "SI",
-    "vital_signs/body_temperature/any_event/temperature|magnitude": 37.1,
-    "vital_signs/body_temperature/any_event/temperature|unit": "°C",
-    "vital_signs/blood_pressure/any_event/systolic": 120,
-    "vital_signs/blood_pressure/any_event/diastolic": 90,
-    "vital_signs/height_length/any_event/body_height_length": 171,
-    "vital_signs/body_weight/any_event/body_weight": 57.2
-};
-var queryParams = {
-    "ehrId": ehrid,
-    templateId: 'Vital Signs',
-    format: 'FLAT',
-    committer: 'James'
-};
-$.ajax({
-    url: baseUrl + "/composition?" + $.param(queryParams),
-    type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify(compositionData),
-    success: function (res) {
-        console.log(res.meta.href);
-    }
-});
-	
-}
-
-*/
-
 function getEhr(x){
 	if(ehrIDs.length>x){
 	var	sessionId=getSessionId();
@@ -323,37 +217,8 @@ function getEhr(x){
 				}
 		});
 	}
-	//end//
+
 }
-/*
-function getMeritev(x){
-		var	sessionId=getSessionId();
-		$.ajaxSetup({
-	 headers: {
-        "Ehr-Session": sessionId
-    	}
-	});
-	$.ajax({
-		 url: baseUrl + "/view/" + ehrIDs[x] + "/blood_pressure",
-    	type: 'GET',
-    	success: function (res) {
-        	for (var i in res) {
-        		var lololo=res[i].time + ': ' + res[i].systolic + '/' + res[i].diastolic + res[i].unit;
-            	console.log(lololo);
-            	var m= document.getElementById('test').innerHTML;
-            	document.getElementById("test").innerHTML = te+"<br>"+lololo;
-        	}
-    	},
-    	error: function(err){console.log("Napaka: "+JSON.parse(err.responseText).userMessage);}
-	});
-}
-
-*/
-
-
-
-
-
 
 
 
