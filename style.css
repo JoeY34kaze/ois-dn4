@@ -3,13 +3,14 @@
     padding-left: 5%;
 }
 #superWrapper{
+    padding-top: 80px;
     width:90%;
     height:900px;
     margin: 0 auto;
+    background-color:#d3ffff;
     
 }
 #wrapper{
-    padding-top: 80px;
     background-color:#d3d3d3;
     height:100%;
     width:100%;
@@ -22,14 +23,14 @@
     width:97%;
 }
 #bolnik{
-    height:80px;
+    height:2em;
     width:100%;
     background-color:#d3d8f5;
 }
 #container{
     height:100%;
     width:100%;
-    background-color:#d3dcf5;
+    background-color:#23dcf5;
 }
 
 #grafi{
