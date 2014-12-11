@@ -5,6 +5,11 @@ var username = "ois.seminar";
 var password = "ois4fri";
 var ehrIDs=[]
 var bolniki=[]
+var bolnikData1=[]
+var bolnikData2=[]
+var bolnikData3=[]
+var bolnikData4=[]
+
 function getSessionId() {
     var response = $.ajax({
         type: "POST",
@@ -385,7 +390,7 @@ function preberiMeritveVitalnihZnakov(x) {
 						        			console.log("5");
 						        	
 						           // results += "<tr><td>" + res[i].time + "</td><td class='text-right'>" + res[i].weight + " " 	+ res[i].unit + "</td>";
-						            $("#test").append("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
+						            $("#test").append("<br> "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 						            		console.log("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 						        }
 						      //  results += "</table>";
