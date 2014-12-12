@@ -213,7 +213,18 @@ function getEhr(x){
 					var te="Prebran bolnik "+x+" ime: "+party.firstNames+" "+party.lastNames;
 					document.getElementById("test").innerHTML = te;
 					console.log(te+"\n Meritve: ");
-					preberiMeritveVitalnihZnakov(x);
+					
+					//klič metodo znotraj iframe da nariše graf
+					$(window).load(function(){
+        				 document.getElementById('iframe_graf_1').contentWindow.getT(ehrIDs[x]);
+    				 });
+					
+					
+					
+					
+					
+					
+				//	preberiMeritveVitalnihZnakov(x);
 				}
 		});
 	}
@@ -221,7 +232,7 @@ function getEhr(x){
 }
 
 
-
+/*
 
 function preberiMeritveVitalnihZnakov(x) {
 	
@@ -261,7 +272,7 @@ function preberiMeritveVitalnihZnakov(x) {
 				            		
 				            		
 				            		//narisat graf v #grafi
-				            		draw_graph1();
+				            		draw_graph1(bolnikData1, bolnikData2);
 				            		
 				            		
 				            		
@@ -286,10 +297,12 @@ function preberiMeritveVitalnihZnakov(x) {
 	
 }
 
+
+
 function draw_graph1(){
 	
 
-	
+
 	
 	
 	
@@ -303,7 +316,7 @@ function draw_graph1(){
 }
 
 
-
+*/
 
 
 
