@@ -1,4 +1,7 @@
-html, body{height: 100%}
+#test{
+    padding-top: 20px;
+    padding-left: 5%;
+}
 #superWrapper{
     padding-top: 70px;
     width:90%;
@@ -11,12 +14,9 @@ html, body{height: 100%}
     background-color:#d3d3d3;
     height:100%;
     width:100%;
-    padding: 0;
-    margin: 0;
 }
 #wrapper2{
     padding-left:3%;
-    margin: 0;
     background-color:#d3d3f5;
     height:100%;
     width:97%;
@@ -25,15 +25,11 @@ html, body{height: 100%}
     height:2em;
     width:100%;
     background-color:#d3d8f5;
-    padding: 0;
-    margin: 0;
 }
 #container{
     width:100%;
     height:90%;
     background-color:#23dcf5;
-    padding: 0;
-    margin: 0;
 }
 
 #grafi{
@@ -41,23 +37,17 @@ html, body{height: 100%}
     float:left;
     height:100%;
     width:80%;
-    padding: 0;
-    margin: 0;
 }
 #spacer1{
     float:left;
     height:100%;
     width:5%;
-    padding: 0;
-    margin: 0;
     background-color:#2fff22;
 }
 #twitter{
     float:left;
     height:100%;
     width:15%;
-    padding: 0;
-    margin: 0;
     background-color:#222222;
 }
 #grafi_spacerji{
@@ -65,114 +55,5 @@ html, body{height: 100%}
     height:90%;
     margin-top: 5%;
     margin-left: 5%;
-    background-color:#ff22f2;
-}
-#grafBox1{
-    height:25%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-    background-color:#ff2ff2;
-}
-#grafBox_Spacer_Top1{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-}
-#graf_teza{
-    padding: 0;
-    margin: 0;
-    height:70%;
-    width:100%;
     background-color:red;
-}
-#grafBox_Spacer_Bot1{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-}
-
-
-#grafBox2{
-    height:25%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-    background-color:#ff2ff2;
-}
-#grafBox_Spacer_Top2{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-}
-#graf_BMI{
-    height:70%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-        background-color:blue;
-
-}
-#grafBox_Spacer_Bot2{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-        background-color:green;
-
-}
-
-#grafBox3{
-    height:25%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-    background-color:#ff2ff2;
-}
-#grafBox_Spacer_Top3{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-}
-#graf_pritisk{
-    height:70%;
-    padding: 0;
-    margin: 0;
-    width:100%
-}
-#grafBox_Spacer_Bot3{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-}
-
-#grafBox4{
-    height:25%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-    background-color:#ff2ff2;
-}
-#grafBox_Spacer_Top4{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
-}
-#graf_4{
-    height:70%;
-    padding: 0;
-    margin: 0;
-    width:100%
-}
-#grafBox_Spacer_Bot4{
-    height:15%;
-    padding: 0;
-    margin: 0;
-    width:100%;
 }
