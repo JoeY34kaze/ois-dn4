@@ -53,10 +53,7 @@
 #grafi_spacerji{
     width:90%;
     height:90%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
+    margin-top: 5%;
+    margin-left: 5%;
     background-color:#ff22f2;
 }
