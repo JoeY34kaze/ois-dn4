@@ -232,52 +232,57 @@ function preberiMeritveVitalnihZnakov(x) {
 	sessionId = getSessionId();	
 
 	var ehrId = ehrIDs[x];
-	var tip = "telesna teža";
 
-	if (!ehrId || ehrId.trim().length == 0 || !tip || tip.trim().length == 0) {
-	} else {
-		console.log("1");
-		$.ajax({
-			url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
-	    	type: 'GET',
-	    	headers: {"Ehr-Session": sessionId},
-	    	success: function (data) {
-	    				console.log("2");
-				var party = data.party;
-				if (tip == "telesna teža") {
-					$.ajax({
-					    url: baseUrl + "/view/" + ehrId + "/" + "weight",
-					    type: 'GET',
-					    headers: {"Ehr-Session": sessionId},
-					    success: function (res) {
-					    			console.log("3");
-					    	if (res.length > 0) {
-					    		// res je 0
-					    				console.log("4");
-						        for (var i in res) {
-						        			console.log("5");
-						        	
-						           // results += "<tr><td>" + res[i].time + "</td><td class='text-right'>" + res[i].weight + " " 	+ res[i].unit + "</td>";
-						            $("#test").append("<br> "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
-						            		console.log("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
-						        }
-						      //  results += "</table>";
-						     
-					    	} else {
-					    				console.log("6");
-					    	}
-					    },
-					    error: function() {
-							console.log(JSON.parse(err.responseText).userMessage);
-					    }
-					});					
-				}
-	    	},
-	    	error: function(err) {
-				console.log(JSON.parse(err.responseText).userMessage);
-	    	}
-		});
-	}
+	//	console.log("1");
+	$.ajax({
+		url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
+    	type: 'GET',
+    	headers: {"Ehr-Session": sessionId},
+    	success: function (data) {
+    				console.log("2");
+			var party = data.party;
+			$.ajax({
+			    url: baseUrl + "/view/" + ehrId + "/" + "weight",
+			    type: 'GET',
+			    headers: {"Ehr-Session": sessionId},
+			    success: function (res) {
+			    			console.log("3");
+			    	if (res.length > 0) {
+			    		// res je 0
+			    				console.log("4");
+				        for (var i=0;i<res.length;i++) {
+				        			console.log("5");
+				        	bolnikData1[i]=res[res.length-1-i].weight;
+				        	bolnikData2[i]=res[res.length-1-i].time;
+
+				           // results += "<tr><td>" + res[i].time + "</td><td class='text-right'>" + res[i].weight + " " 	+ res[i].unit + "</td>";
+				            $("#test").append("<br> "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
+				            		console.log("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
+				            		
+				            		
+				            		//narisat graf v #grafi
+				            		
+				            		
+				            		
+				            		
+				        }
+				      //  results += "</table>";
+				     
+			    	} else {
+			    				console.log("6");
+			    	}
+			    },
+			    error: function() {
+					console.log(JSON.parse(err.responseText).userMessage);
+			    }
+			});					
+			
+    	},
+    	error: function(err) {
+			console.log(JSON.parse(err.responseText).userMessage);
+    	}
+	});
+	
 }
 
 
