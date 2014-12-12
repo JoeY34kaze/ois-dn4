@@ -261,6 +261,7 @@ function preberiMeritveVitalnihZnakov(x) {
 				            		
 				            		
 				            		//narisat graf v #grafi
+				            		draw_graph1();
 				            		
 				            		
 				            		
@@ -287,10 +288,7 @@ function preberiMeritveVitalnihZnakov(x) {
 
 function draw_graph1(){
 	
-	
-	
-	
-	
+
 	
 	
 	
