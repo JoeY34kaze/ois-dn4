@@ -1,7 +1,4 @@
-#test{
-    padding-top: 20px;
-    padding-left: 5%;
-}
+html, body{height: 100%}
 #superWrapper{
     padding-top: 70px;
     width:90%;
