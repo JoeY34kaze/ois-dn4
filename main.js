@@ -285,6 +285,25 @@ function preberiMeritveVitalnihZnakov(x) {
 	
 }
 
+function draw_graph1(){
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
 
 
 
