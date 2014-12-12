@@ -64,7 +64,20 @@
 									<div id="graf_box_1_graf">
 										
 										
-										
+										<script>
+											var canvas=d3.select("graf_box_1_graf")
+												.append("svg")
+												.attr("width", 100%)
+												.attr("height",100%);
+												
+											var circle = canvas.append("circle")
+															.attr("cx",50%)
+															.attr("cy", 50%)
+															.attr("r", 50)
+															.attr("fill", "red");
+															
+											
+										</script>
 										
 										
 										
