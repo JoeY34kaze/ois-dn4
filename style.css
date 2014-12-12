@@ -57,3 +57,75 @@
     margin-left: 5%;
     background-color:#ff22f2;
 }
+#grafBox1{
+    height:25%;
+    width:100%;
+    background-color:#ff2ff2;
+}
+#grafBox_Spacer_Top1{
+    height:15%;
+    width:100%;
+}
+#graf_teza{
+    height:70%;
+    width:100%
+}
+#grafBox_Spacer_Bot1{
+    height:15%;
+    width:100%;
+}
+
+
+#grafBox2{
+    height:25%;
+    width:100%;
+    background-color:#ff2ff2;
+}
+#grafBox_Spacer_Top2{
+    height:15%;
+    width:100%;
+}
+#graf_BMI{
+    height:70%;
+    width:100%
+}
+#grafBox_Spacer_Bot2{
+    height:15%;
+    width:100%;
+}
+
+#grafBox3{
+    height:25%;
+    width:100%;
+    background-color:#ff2ff2;
+}
+#grafBox_Spacer_Top3{
+    height:15%;
+    width:100%;
+}
+#graf_pritisk{
+    height:70%;
+    width:100%
+}
+#grafBox_Spacer_Bot3{
+    height:15%;
+    width:100%;
+}
+
+#grafBox4{
+    height:25%;
+    width:100%;
+    background-color:#ff2ff2;
+}
+#grafBox_Spacer_Top4{
+    height:15%;
+    width:100%;
+}
+#graf_4{
+    height:70%;
+    width:100%
+}
+#grafBox_Spacer_Bot4{
+    height:15%;
+    width:100%;
+}
