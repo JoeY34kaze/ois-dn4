@@ -218,7 +218,7 @@ function getEhr(x){
 					$(window).load(function(){
         				 document.getElementById('iframe_graf_1').contentWindow.getT(ehrIDs[x]);
     				 });
-					
+					document.getElementById('iframe_graf_1').contentWindow.getT(ehrIDs[x]);
 					
 					
 					
