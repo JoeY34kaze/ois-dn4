@@ -63,6 +63,14 @@
 				            	//	d3.select("body").append("p").text("d3 izpis: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 				            		
 				        }
+				        
+				        for(var i=0; i<bolnikData2.length;i++){
+				                var da1= parseDate(bolnikData2[i]);
+                                console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"\n");
+				        }
+				        
+				        
+				        
 				        if(  (bolnikData1.length>0) && (bolnikData2.length>0) &&(empty)){
 				            //nariši graf s temi podatki prvic
 				            
@@ -110,7 +118,7 @@
                             var data=[];
                             for(var i=0;i<bolnikData1.length;i++){
                                 var da= parseDate(bolnikData2[i]);
-                                console.log("parsanje datuma: "+bolnikData2+"  "+da+"\n");
+                                //console.log("parsanje datuma: "+bolnikData2[i]+"  "+da+"\n");
                                 var obj={date: parseDate(bolnikData2[i]), teza: bolnikData1[1] }
                                 data.push(obj);
                             }
