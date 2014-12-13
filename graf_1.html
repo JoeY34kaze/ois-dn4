@@ -63,7 +63,7 @@
 				            	//	d3.select("body").append("p").text("d3 izpis: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 				            		
 				        }
-				        var parseDate = d3.time.format("%Y-%m-%dT%H:%MZ").parse;
+				        var parseDate = d3.time.format("%Y-%m-%dT%H:%M.%LZ").parse;
 				        for(var i=0; i<bolnikData2.length;i++){
 				                var da1= parseDate(bolnikData2[i]);
                                 console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"\n");
