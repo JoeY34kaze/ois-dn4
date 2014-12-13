@@ -20,7 +20,6 @@
         </style>
     </head>
     <body onload="init()">
-    bla
     <script>
     var baseUrl = 'https://rest.ehrscape.com/rest/v1';
     var queryUrl = baseUrl + '/query';
@@ -64,11 +63,11 @@
 				            		
 				        }
 				        var parseDate = d3.time.format("%Y-%m-%dT%H:%M.%LZ").parse;
-				        var iso = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ");
+				        var iso = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ").parse;
 				        for(var i=0; i<bolnikData2.length;i++){
 				                var da1= parseDate(bolnikData2[i]);
 				                var da2=iso(bolnikData2[i]);
-                                console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2"  |\n");
+                                console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"  |\n");
 				        }
 				        
 				        
