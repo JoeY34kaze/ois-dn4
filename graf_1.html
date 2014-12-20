@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src ="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
         <style>
             path { 
@@ -53,9 +54,9 @@
 				        	bolnikData1[i]=res[res.length-1-i].weight;
 				        	bolnikData2[i]=res[res.length-1-i].time;
 
-				           
+				           var now=moment();
 				            
-				            		console.log(" \n iframe: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
+				            		console.log(" \n iframe: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit+"moment:  "+now);
 				            		
 				            		
 				            		//narisat graf v #grafi
@@ -94,6 +95,7 @@
 				        for(var i=0; i<bolnikData2.length;i++){
 				                var da1= parseDate(bolnikData2[i]);
 				                var da2=iso(bolnikData2[i]);
+				                
                                 console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"  |\n");
 				        }
 				        
