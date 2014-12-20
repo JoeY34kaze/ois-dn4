@@ -59,15 +59,34 @@
 				            		console.log(" \n iframe: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 				            		
 				            		
+				            		//narisat graf v #grafi
+				            	//	d3.select("body").append("p").text("d3 izpis: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
 				            		
 				        }
 
 				        
 				        //here
+				        
+				        
+				        
+				        
+				        var parseDate = d3.time.format("%Y-%m-%dT%H:%M.%LZ").parse;
+				        var iso = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ").parse;
+				        for(var i=0; i<bolnikData2.length;i++){
+				                var da1= parseDate(bolnikData2[i]);
+				                var da2=iso(bolnikData2[i]);
+				                var now=moment(bolnikData2[i]);
+                                console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"moment:  "+now.toISOString()+"  |\n");
+				        }
 
 				        
 				        if(  (bolnikData1.length>0) && (bolnikData2.length>0) &&(empty)){
 				            //nariši graf s temi podatki prvic
+				            
+				            
+				            
+				            
+				            //še čas naredit
 				            
 				            
 				            
@@ -81,6 +100,7 @@
                 		var w = 1000 
                 		var h = 400 
                 		
+                		// create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
                 		var data = bolnikData1;
                 
                 		var x = d3.scale.linear().domain([0, data.length]).range([0, w]);
@@ -102,28 +122,14 @@
                 			      .attr("height", h )
                 			    .append("svg:g")
                 
-                			// create xAxis
-                           var xaxisScale = d3.scale.linear()
-                             .domain([casi.min, casi.max])
-                             .range([0, h]);              			
-                			
-                			
-                			var xAxis = d3.svg.axis()
-                			.xaxisScale
-                			.ticks(data.max)
-                			.tickValues(data)
-                			
-                			
-                			
+                			// create yAxis
+                			var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
                 			// Add the x-axis.
                 			graph.append("svg:g")
                 			      .attr("class", "x axis")
                 			      .attr("transform", "translate(0," + h + ")")
                 			      .call(xAxis);
                 
-
- 
- 
                 			// create left yAxis
                 			var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
                 			// Add the y-axis to the left
@@ -170,13 +176,7 @@
     return response.responseJSON.sessionId;
 }
     
-    Array.max = function( array ){
-    return Math.max.apply( Math, array );
-};
- 
-Array.min = function( array ){
-    return Math.min.apply( Math, array );
-};
+    
     
     
     
