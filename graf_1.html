@@ -169,6 +169,16 @@
                                     .attr("transform", 
                                           "translate(" + margin.left + "," + margin.top + ")");
                             
+                            
+                            var arrData=new Array(bolnikData1.length);
+                            for(var i = 0; i<arrData.length;i++){
+                                arrData[i]= new Array(2);
+                                arrData[i][0]=bolnikData2[i];
+                                arrData[i][1]=bolnikData1[i];
+                            }
+                            
+                           /* 
+                            
                             // Get the data
                             var data=[];
                             for(var i=0;i<bolnikData1.length;i++){
@@ -177,7 +187,19 @@
                                 var obj={date: da, teza: bolnikData1[1] }
                                 data.push(obj);
                                 data[i]=obj;
-                            }
+                            }*/
+                            
+                            var data = arrData.map(function(d) {
+                            return {
+                              date: moment(d[0]),
+                              close: d[1]
+                            };
+                        });
+                            
+                            
+                            
+                            
+                            
                             
                                 // Scale the range of the data
                                 x.domain(d3.extent(data, function(d) { return d.date; }));
