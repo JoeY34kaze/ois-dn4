@@ -95,7 +95,7 @@
 				        for(var i=0; i<bolnikData2.length;i++){
 				                var da1= parseDate(bolnikData2[i]);
 				                var da2=iso(bolnikData2[i]);
-				                var now=moment();
+				                var now=moment(bolnikData2[i]);
                                 console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"moment:  "+now.toISOString()+"  |\n");
 				        }
 				        
