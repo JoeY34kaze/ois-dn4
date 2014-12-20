@@ -90,9 +90,12 @@ function blabla(){
 	//blabla dela pravilno
 	console.log("smov blabla");
 	if(ehrIDs.length>2){
+											 //"2011-07-01T19:15:28Z"
 		dodajMeritevVitalnihZnakov( ehrIDs[0], "2000-11-20T12:00Z", 167, 60, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov( ehrIDs[0], "2001-11-20T12:00Z", 168, 64, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2002-11-20T12:00Z", 169, 66, 36, 120, 70, "James Bond");
+			dodajMeritevVitalnihZnakov(ehrIDs[0], "2002-12-20T12:00Z", 169, 66, 36, 120, 70, "James Bond");
+			dodajMeritevVitalnihZnakov(ehrIDs[0], "2002-12-25T12:00Z", 169, 66, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2003-11-20T12:00Z", 171, 72, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2004-11-20T12:00Z", 172, 72, 36, 120, 70, "James Bond");
 		dodajMeritevVitalnihZnakov(ehrIDs[0], "2005-11-20T12:00Z", 173, 75, 36, 110, 65, "James Bond");
