@@ -103,7 +103,7 @@
                 		// create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
                 		var data = bolnikData1;
                 
-                		var x = d3.scale.linear().domain([0, d3.max(casi)]).range([0, w]);
+                		var x = d3.scale.linear().domain([0, 500]).range([0, w]);
                 		var y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0]);
                 
                 		// create a line function that can convert data[] into x and y points
