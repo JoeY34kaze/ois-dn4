@@ -53,23 +53,11 @@
 				        			console.log("5");
 				        	bolnikData1[i]=res[res.length-1-i].weight;
 				        	bolnikData2[i]=res[res.length-1-i].time;
-                            
-				           
-				            
+
 				            		console.log(" \n iframe: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
-				            		
-				            		
-				            		//narisat graf v #grafi
-				            	//	d3.select("body").append("p").text("d3 izpis: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
-				            		
+
 				        }
 
-				        
-				        //here
-				        
-				        
-				        
-				        
 				        var parseDate = d3.time.format("%Y-%m-%dT%H:%M.%LZ").parse;
 				        var iso = d3.time.format.utc("%Y-%m-%dT%H:%M:%S.%LZ").parse;
 				        for(var i=0; i<bolnikData2.length;i++){
@@ -79,36 +67,39 @@
                                 console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"moment:  "+now.toISOString()+"  |\n");
 				        }
 
+
+
+
+
+
+
+                        if(!empty){
+                            $(".svg").remove();
+                            empty=true;
+                        }
+
+
+
+
+
+
 				        
-				        if(  (bolnikData1.length>0) && (bolnikData2.length>0) &&(empty)){
-				            //nariši graf s temi podatki prvic
-				            
-				            
-				            
-				            
-				            //še čas naredit
-				            
-				            
-				            
-				            
+				        if(  (bolnikData1.length>0) && (bolnikData2.length>0)){
+
 				            var casi=Array(bolnikData2.length);
 				            for(var i=0;i<casi.length;i++){
 				                casi[i]=moment(bolnikData2[i]);
 				                console.log("cas: "+bolnikData2[i]+"   = moment =  "+casi[i]);
 				            }
-                				            		// define dimensions of graph
                 		var w = 1000 
                 		var h = 400 
                 		
-                		// create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)
                 		var data = bolnikData1;
                 
                 		var x = d3.scale.linear().domain([0, data.length]).range([0, w]);
                 		var y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0]);
                 
-                		// create a line function that can convert data[] into x and y points
                 		var line = d3.svg.line()
-                			// assign the X function to plot our line as we wish
                 			.x(function(d,i) { 
                 				return x(i); 
                 			})
@@ -116,37 +107,29 @@
                 				return y(d); 
                 			})
                 
-                			// Add an SVG element with the desired dimensions and margin.
                 			var graph = d3.select("body").append("svg:svg")
                 			      .attr("width", w )
                 			      .attr("height", h )
                 			    .append("svg:g")
                 
-                			// create yAxis
-                			var xAxis = d3.svg.axis().scale(x).tickSubdivide(true);
-                			// Add the x-axis.
+                			var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
                 			graph.append("svg:g")
                 			      .attr("class", "x axis")
                 			      .attr("transform", "translate(0," + h + ")")
                 			      .call(xAxis);
                 
-                			// create left yAxis
+
                 			var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
-                			// Add the y-axis to the left
+
                 			graph.append("svg:g")
                 			      .attr("class", "y axis")
                 			      .attr("transform", "translate(-25,0)")
                 			      .call(yAxisLeft);
-                			
-                  			// Add the line by appending an svg:path element with the data line we created above
-                			// do this AFTER the axes above so that the line is above the tick-lines
+
                   			graph.append("svg:path").attr("d", line(data));
                 			
                             empty=false;
     
-				        }else if((bolnikData1.length>0) && (bolnikData2.length>0) &&(!empty)){
-				            //posodobitev že obstojecega grafa
-				            
 				        }
 				     
 			    	} else {
