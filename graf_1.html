@@ -142,7 +142,7 @@
                             //      2005-11-20T13:00:00.000+01:00
                             
                             
-                           // var parseDate = d3.time.format("%Y-%m-%dT%H:%MZ").parse;
+                            
                             
                             // Set the ranges
                             var x = d3.time.scale().range([0, width]);
@@ -172,11 +172,19 @@
                             // Get the data
                             var data=[];
                             for(var i=0;i<bolnikData1.length;i++){
-                                var da= parseDate(bolnikData2[i]);
+                                var da= moment(bolnikData2[i]);
                                 //console.log("parsanje datuma: "+bolnikData2[i]+"  "+da+"\n");
-                                var obj={date: parseDate(bolnikData2[i]), teza: bolnikData1[1] }
+                                var obj={date: da, teza: bolnikData1[1] }
                                 data.push(obj);
                             }
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             
                                 // Scale the range of the data
                                 x.domain(d3.extent(data, function(d) { return d.date; }));
