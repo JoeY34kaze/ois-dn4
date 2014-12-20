@@ -53,10 +53,10 @@
 				        			console.log("5");
 				        	bolnikData1[i]=res[res.length-1-i].weight;
 				        	bolnikData2[i]=res[res.length-1-i].time;
-
-				           var now=moment();
+                            
+				           
 				            
-				            		console.log(" \n iframe: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit+"moment:  "+now);
+				            		console.log(" \n iframe: "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit;
 				            		
 				            		
 				            		//narisat graf v #grafi
@@ -95,8 +95,8 @@
 				        for(var i=0; i<bolnikData2.length;i++){
 				                var da1= parseDate(bolnikData2[i]);
 				                var da2=iso(bolnikData2[i]);
-				                
-                                console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"  |\n");
+				                var now=moment();
+                                console.log("parsanje datuma: "+bolnikData2[i]+"  "+da1+"  "+da2+"moment:  "+now.toISOString()+"  |\n");
 				        }
 				        
 				        
