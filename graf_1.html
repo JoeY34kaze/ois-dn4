@@ -123,7 +123,7 @@
                 			    .append("svg:g")
                 
                 			// create yAxis
-                			var xAxis = d3.svg.axis().scale(x);
+                			var xAxis = d3.svg.axis().scale(x).tickSubdivide(true);
                 			// Add the x-axis.
                 			graph.append("svg:g")
                 			      .attr("class", "x axis")
@@ -131,7 +131,7 @@
                 			      .call(xAxis);
                 
                 			// create left yAxis
-                			var yAxisLeft = d3.svg.axis().scale(y).ticks(10).orient("left").tickFormat("d");
+                			var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
                 			// Add the y-axis to the left
                 			graph.append("svg:g")
                 			      .attr("class", "y axis")
