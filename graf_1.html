@@ -74,7 +74,7 @@
 
 
                         if(!empty){
-                            $(".svg").remove();
+                            $("#grafsvg").remove();
                             empty=true;
                         }
 
@@ -108,6 +108,7 @@
                 			})
                 
                 			var graph = d3.select("body").append("svg:svg")
+                			       .attr("id", "grafsvg")
                 			      .attr("width", w )
                 			      .attr("height", h )
                 			    .append("svg:g")
