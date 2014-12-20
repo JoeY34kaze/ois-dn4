@@ -123,6 +123,12 @@
                 			    .append("svg:g")
                 
                 			// create yAxis
+                           var xaxisScale = d3.scale.linear()
+                             .domain([casi.min, casi.max])
+                             .range([0, h]);              			
+                			
+                			
+                			
                 			var xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true);
                 			// Add the x-axis.
                 			graph.append("svg:g")
@@ -130,7 +136,9 @@
                 			      .attr("transform", "translate(0," + h + ")")
                 			      .call(xAxis);
                 
-                
+
+ 
+ 
                 			// create left yAxis
                 			var yAxisLeft = d3.svg.axis().scale(y).ticks(4).orient("left");
                 			// Add the y-axis to the left
@@ -177,7 +185,13 @@
     return response.responseJSON.sessionId;
 }
     
-    
+    Array.max = function( array ){
+    return Math.max.apply( Math, array );
+};
+ 
+Array.min = function( array ){
+    return Math.min.apply( Math, array );
+};
     
     
     
