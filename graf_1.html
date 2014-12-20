@@ -176,15 +176,8 @@
                                 //console.log("parsanje datuma: "+bolnikData2[i]+"  "+da+"\n");
                                 var obj={date: da, teza: bolnikData1[1] }
                                 data.push(obj);
+                                data[i]=obj;
                             }
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                             
                                 // Scale the range of the data
                                 x.domain(d3.extent(data, function(d) { return d.date; }));
