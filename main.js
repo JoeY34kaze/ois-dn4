@@ -287,4 +287,6 @@ $(document).ready(function() {
 		$("#button1");
 		$("#buttonGetEhr");
 		$("#navi");
+		$("#atwitt");
+		$("#twitter")
 });
