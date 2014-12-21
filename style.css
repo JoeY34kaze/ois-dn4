@@ -7,11 +7,11 @@
     width:90%;
     height:1500px;
     margin: 0 auto;
-    background-color:red;
+    background-color:#d3ffff;
     
 }
 #wrapper{
-    background-color:#d3d3d3;
+    background-color:red;
     height:100%;
     width:100%;
 }
@@ -28,7 +28,7 @@
 }
 #container{
     width:100%;
-    height:95%;
+    height:9%;
     background-color:#23dcf5;
 }
 
