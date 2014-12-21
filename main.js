@@ -255,7 +255,7 @@ function preberiAql(x){
 			"t/data[at0002]/events[at0003]/time/value as cas, " +
 			"t/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as temperatura_vrednost, " +
 			"t/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/units as temperatura_enota " +
-		"from EHR e[e/ehr_id/value='" + ehrId + "'] " +
+		"from EHR e[e/ehr_id/value='" + ehrIds[x] + "'] " +
 		"contains OBSERVATION t[openEHR-EHR-OBSERVATION.body_temperature.v1] " +
 		"where t/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude<35 " +
 		"order by t/data[at0002]/events[at0003]/time/value desc " +
