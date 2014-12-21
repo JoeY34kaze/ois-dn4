@@ -241,7 +241,7 @@ function getEhr(x){
 function preberiAql(x){
 		var AQL2=
 		"select "+
-    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value as Body_weight " +
+    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value as teza " +
 		"from EHR e[e/ehr_id/value='"+ehrIDs[x]+"'] "+
 		"contains COMPOSITION a "+
        	"contains OBSERVATION a_a[openEHR-EHR-OBSERVATION.body_weight.v1] "+
@@ -289,7 +289,8 @@ function preberiAql(x){
 	    	if (res) {
 	    		var rows = res.resultSet;
 		        for (var i in rows) {
-		            console.log("moj: primer "+rows[i].Body_weight);
+		            console.log("moj: primer "+rows[i].teza);
+		            console.log(typeof rows[i].teza)
 		        }
 	    	} else {
 	    		console.log("moj primer nima res")
