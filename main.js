@@ -285,6 +285,7 @@ $(document).ready(function() {
 		$("#bolnikiSporocilo").html("");
 		$("#button2");
 		$("#button1");
+		$("#twitter");
 		$("#buttonGetEhr");
 		$("#navi");
 });
