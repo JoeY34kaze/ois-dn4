@@ -288,16 +288,9 @@ function preberiAql(x){
 	    	if (res) {
 	    		var rows = res.resultSet;
 		        for (var i in rows) {
-		            console.log("moj: primer : "+rows[i].teza);
-		            console.log("moj: primer toString: "+rows[i].teza.toString);
-		            console.log(typeof rows[i].teza)
-		            console.log("moj: primer "+rows[i]);
-		            console.log("moj: primer "+rows[i].toString);
-		            alert(JSON.stringify(rows, null, 4));
-		            console.log("----------");
-		            alert(JSON.stringify(rows[i], null, 4));
-		            console.log("----------");
-		            alert(JSON.stringify(rows[i].teza, null, 4));
+
+		            console.log("moj: primer: "+rows[i].teza.magnitude+" "+rows[i].teza.units);
+
 
 		        }
 	    	} else {
