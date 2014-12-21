@@ -77,8 +77,10 @@ function ustvariBolnike() {
 		changeBtnText("item0",bolniki[0]);
 		changeBtnText("item1",bolniki[1]);
 		changeBtnText("item2",bolniki[2]);
+		changeBtnText("item20",bolniki[0]);
+		changeBtnText("item21",bolniki[1]);
+		changeBtnText("item22",bolniki[2]);
 
-	//	$("#kreirajSporociloLoop").html("<span class='obvestilo label label-success fade-in'>Uspešno kreirani EHR-ji:  '"+ehrIDs[0]+"\t"+ehrIDs[1]+"\t"+ehrIDs[2]  + "'.</span>");
 	}
 	//nevem zakaj ampak prvič ne ustvari nobenega
 
@@ -235,113 +237,72 @@ function getEhr(x){
 }
 
 
-/*
 
-function preberiMeritveVitalnihZnakov(x) {
-	
-	
-	//branje teze zagotovo deluje¨!
-	
-	console.log("branje meritev")
-	sessionId = getSessionId();	
-
-	var ehrId = ehrIDs[x];
-
-	//	console.log("1");
+function preberiAql(x){
+		var AQL2=
+		"select "+
+    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value as Body_weight "+
+		"from EHR "+ehrIDs[x]+
+		" contains COMPOSITION a "
+       	"contains OBSERVATION a_a[openEHR-EHR-OBSERVATION.body_weight.v1] "+
+		"where a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude>0 "+
+		"order by "+
+    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude desc "+
+		"offset 0 limit 1 ";
+		
+		var AQL = 
+		"select " +
+			"t/data[at0002]/events[at0003]/time/value as cas, " +
+			"t/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude as temperatura_vrednost, " +
+			"t/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/units as temperatura_enota " +
+		"from EHR e[e/ehr_id/value='" + ehrId + "'] " +
+		"contains OBSERVATION t[openEHR-EHR-OBSERVATION.body_temperature.v1] " +
+		"where t/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/magnitude<35 " +
+		"order by t/data[at0002]/events[at0003]/time/value desc " +
+		"limit 10";
 	$.ajax({
-		url: baseUrl + "/demographics/ehr/" + ehrId + "/party",
-    	type: 'GET',
-    	headers: {"Ehr-Session": sessionId},
-    	success: function (data) {
-    				console.log("2");
-			var party = data.party;
-			$.ajax({
-			    url: baseUrl + "/view/" + ehrId + "/" + "weight",
-			    type: 'GET',
-			    headers: {"Ehr-Session": sessionId},
-			    success: function (res) {
-			    			console.log("3");
-			    	if (res.length > 0) {
-			    		// res je 0
-			    				console.log("4");
-				        for (var i=0;i<res.length;i++) {
-				        			console.log("5");
-				        	bolnikData1[i]=res[res.length-1-i].weight;
-				        	bolnikData2[i]=res[res.length-1-i].time;
-
-				           // results += "<tr><td>" + res[i].time + "</td><td class='text-right'>" + res[i].weight + " " 	+ res[i].unit + "</td>";
-				            $("#test").append("<br> "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
-				            		console.log("\n "+res[i].time+"   "+res[i].weight + "   " 	+ res[i].unit);
-				            		
-				            		
-				            		//narisat graf v #grafi
-				            		draw_graph1(bolnikData1, bolnikData2);
-				            		
-				            		
-				            		
-				            		
-				        }
-				      //  results += "</table>";
-				     
-			    	} else {
-			    				console.log("6");
-			    	}
-			    },
-			    error: function() {
-					console.log(JSON.parse(err.responseText).userMessage);
-			    }
-			});					
-			
-    	},
-    	error: function(err) {
+	    url: baseUrl + "/query?" + $.param({"aql": AQL}),
+	    type: 'GET',
+	    headers: {"Ehr-Session": sessionId},
+	    success: function (res) {
+	    	if (res) {
+	    		var rows = res.resultSet;
+		        for (var i in rows) {
+		            console.log("demo: primer "+rows[i].temperatura_vrednost);
+		        }
+	    	} else {
+	    		console.log("demo primer nima res")
+	    	}
+	
+	    },
+	    error: function() {
 			console.log(JSON.parse(err.responseText).userMessage);
-    	}
+	    }
 	});
 	
+
+		$.ajax({
+	    url: baseUrl + "/query?" + $.param({"aql": AQL2}),
+	    type: 'GET',
+	    headers: {"Ehr-Session": sessionId},
+	    success: function (res) {
+	    	if (res) {
+	    		var rows = res.resultSet;
+		        for (var i in rows) {
+		            console.log("moj: primer "+rows[i].Body_weight);
+		        }
+	    	} else {
+	    		console.log("moj primer nima res")
+	    	}
+	
+	    },
+	    error: function() {
+			console.log(JSON.parse(err.responseText).userMessage);
+	    }
+	});
+	
+	
 }
-
-
-
-function draw_graph1(){
-	
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function inicializacija(){
 	//z jquery disable dropdown
