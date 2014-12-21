@@ -241,14 +241,14 @@ function getEhr(x){
 function preberiAql(x){
 		var AQL2=
 		"select "+
-    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value as Body_weight "+
-		"from EHR "+ehrIDs[x]+
-		" contains COMPOSITION a "
+    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value as Body_weight " +
+		"from EHR e[e/ehr_id/value='"+ehrIDs[x]+"'] "+
+		"contains COMPOSITION a "+
        	"contains OBSERVATION a_a[openEHR-EHR-OBSERVATION.body_weight.v1] "+
-		"where a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude>0 "+
+		"where a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude>0 " +
 		"order by "+
-    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude desc "+
-		"offset 0 limit 1 ";
+    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude desc " +
+		"limit 1";
 		
 		var AQL = 
 		"select " +
