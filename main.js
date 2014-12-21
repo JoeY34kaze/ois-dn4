@@ -246,8 +246,7 @@ function preberiAql(x){
 		"contains COMPOSITION a "+
        	"contains OBSERVATION a_a[openEHR-EHR-OBSERVATION.body_weight.v1] "+
 		"where a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude>0 " +
-		"order by "+
-    	"a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude desc " +
+		"order by a_a/data[at0002]/events[at0003]/data[at0001]/items[at0004, 'Body weight']/value/magnitude desc " +
 		"limit 1";
 		
 		var AQL = 
@@ -292,6 +291,14 @@ function preberiAql(x){
 		            console.log("moj: primer : "+rows[i].teza);
 		            console.log("moj: primer toString: "+rows[i].teza.toString);
 		            console.log(typeof rows[i].teza)
+		            console.log("moj: primer "+rows[i]);
+		            console.log("moj: primer "+rows[i].toString);
+		            alert(JSON.stringify(rows, null, 4));
+		            console.log("----------");
+		            alert(JSON.stringify(rows[i], null, 4));
+		            console.log("----------");
+		            alert(JSON.stringify(rows[i].teza, null, 4));
+
 		        }
 	    	} else {
 	    		console.log("moj primer nima res")
