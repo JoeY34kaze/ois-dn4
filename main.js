@@ -287,10 +287,4 @@ $(document).ready(function() {
 		$("#button1");
 		$("#buttonGetEhr");
 		$("#navi");
-		$("#wrapper");
-			$("#wrapper2");
-			$("#bolnik");
-			$("#container");
-			$("#grafi");
-			$("#twitter");
 });
